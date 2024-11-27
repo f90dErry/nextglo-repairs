@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen ? (
-        <div className='absolute flex flex-col gap-4 bg-blue-600 top-28 w-[400px] p-3 items-center'>
+        <div className='absolute flex flex-col gap-4 bg-blue-600 top-28 w-[400px] p-3 items-center md:flex'>
           {navElements.map((item) => (
             <Link key={item.link} to={item.link}>
               {item.linkName}
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
       ) : null}
 
-      <button onClick={toogleMenu}>
+      <button onClick={toogleMenu} className='md:hidden'>
         {isMenuOpen ? (
           <IoClose className='w-10 h-8 text-blue-900 ' />
         ) : (

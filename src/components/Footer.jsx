@@ -34,7 +34,7 @@ const socialIcons = [
 const Footer = () => {
   const footerYear = new Date().getFullYear()
   return (
-    <footer className='bg-blue-950 text-white bottom-0 fixed w-full py-8 font-sans shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]'>
+    <footer className='bg-blue-950 text-white bottom-0 fixed w-full py-8 font-sans'>
       <div className='container mx-auto px-8'>
         <div className='grid grid-cols-3 gap-8 mb-8'>
           {/* Navigation Section */}
