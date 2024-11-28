@@ -17,7 +17,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className='shadow-md flex justify-between items-center p-3 relative'>
+    <nav className='shadow-md flex justify-between items-center p-3 relative px-10 md:pr-20'>
       <div className=''>
         <img
           src={redlogo}
@@ -26,15 +26,21 @@ const Navbar = () => {
         />
       </div>
 
-      {isMenuOpen ? (
-        <div className='absolute flex flex-col gap-4 bg-blue-600 top-28 w-[400px] p-3 items-center md:flex'>
-          {navElements.map((item) => (
-            <Link key={item.link} to={item.link}>
-              {item.linkName}
-            </Link>
-          ))}
-        </div>
-      ) : null}
+      <div
+        className={`${
+          isMenuOpen ? 'flex' : 'hidden'
+        } absolute flex-col gap-6 top-24 w-[270px] h-[300px] p-3 items-center md:static md:flex md:flex-row  md:w-auto shadow-lg right-1 md:shadow-none md:h-0 md:gap-8 `}
+      >
+        {navElements.map((item) => (
+          <Link
+            key={item.link}
+            to={item.link}
+            className='text-blue-900 hover:underline-offset-8 hover:underline hover:text-red-500 transition-colors duration-200 font-bold text-lg'
+          >
+            {item.linkName}
+          </Link>
+        ))}
+      </div>
 
       <button onClick={toogleMenu} className='md:hidden'>
         {isMenuOpen ? (
