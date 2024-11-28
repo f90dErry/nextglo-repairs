@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <footer className='bg-blue-950 text-white bottom-0 fixed w-full py-8 font-sans'>
       <div className='container mx-auto px-8'>
-        <div className='grid grid-cols-3 gap-8 mb-8'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-8 mb-8'>
           {/* Navigation Section */}
           <div className=''>
             <h3 className='text-white mb-6 font-semibold text-xl'>
@@ -47,7 +47,7 @@ const Footer = () => {
                 <Link
                   key={item.link}
                   to={item.link}
-                  className='text-gray-400 hover:text-white text-sm'
+                  className='text-gray-400 md:hover:text-white text-sm'
                 >
                   {item.linkName}
                 </Link>
@@ -63,12 +63,24 @@ const Footer = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className='flex items-center gap-3 text-gray-400 hover:text-white text-sm'
+                  className='flex items-center gap-3 text-gray-400 md:hover:text-white text-sm'
                 >
                   <span className='text-lg'>{item.icon}</span>
                   <span>{item.name}</span>
                 </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Contact Us */}
+          <div>
+            <h3 className='text-white mb-6 font-semibold text-xl'>
+              Contact us
+            </h3>
+            <div className='flex flex-col gap-4 text-gray-400 text-sm'>
+              <span>+233 (0) 20 560 0915</span>
+              <span>+233 (0) 50 106 6174</span>
+              <span>+233 (0) 24 176 6121</span>
             </div>
           </div>
 
