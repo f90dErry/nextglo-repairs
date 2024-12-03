@@ -41,6 +41,18 @@ const Carousel = () => {
           className='w-full h-full bg-center bg-cover duration-500'
           style={{ backgroundImage: `url(${slides[index].url})` }}
         />
+        {/* Dot Navigation */}
+        <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2'>
+          {slides.map((_, endex) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full shadow-lg ${
+                index === endex ? 'bg-white' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </>
   )
