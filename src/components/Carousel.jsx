@@ -25,7 +25,7 @@ const Carousel = () => {
       setIndex((prevIndex) =>
         prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       )
-    }, 4000) // 4 seconds
+    }, 3000) // 4 seconds
 
     return () => clearInterval(interval)
   }, [])
@@ -43,12 +43,12 @@ const Carousel = () => {
         />
         {/* Dot Navigation */}
         <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2'>
-          {slides.map((_, endex) => (
+          {slides.map((_, slideIndex) => (
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
               className={`w-3 h-3 rounded-full shadow-lg ${
-                index === endex ? 'bg-white' : 'bg-white/50'
+                index === slideIndex ? 'bg-white' : 'bg-white/50'
               }`}
             />
           ))}
