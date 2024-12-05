@@ -4,7 +4,7 @@ import iPhone from '../assets/images/iPhone.jpg'
 import Macbook from '../assets/images/Macbook.jpg'
 import { ReactTyped } from 'react-typed'
 
-const Carousel = () => {
+const Hero = () => {
   const [index, setIndex] = useState(0)
   const slides = [
     {
@@ -36,9 +36,9 @@ const Carousel = () => {
   }
 
   return (
-    <>
+    <div className='md:flex flex-row m-6'>
       <div className='flex flex-col justify-center text-center items-center my-10'>
-        <header className='font-sans font-light text-2xl text-blue-800'>
+        <header className='font-sans font-light text-2xl text-blue-800 md:text-4xl'>
           Quick and Reliable Repairs for Your <br className='' />
           <span className='font-bold '>
             <ReactTyped
@@ -58,6 +58,13 @@ const Carousel = () => {
           We offer fast, reliable repairs for iPhones, iPads, and MacBooks,
           ensuring quality service and quick turnaround.
         </p>
+
+        <button
+          className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
+        md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
+        >
+          Book a Session
+        </button>
       </div>
 
       <div className='w-full h-[250px] bg-red-500 md:max-w-[1400px] md:h-[580px] md:w-full m-auto relative group'>
@@ -78,8 +85,8 @@ const Carousel = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
-export default Carousel
+export default Hero
