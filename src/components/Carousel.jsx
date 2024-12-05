@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import iPad from '../assets/images/iPad.jpg'
 import iPhone from '../assets/images/iPhone.jpg'
 import Macbook from '../assets/images/Macbook.jpg'
+import { ReactTyped } from 'react-typed'
 
 const Carousel = () => {
   const [index, setIndex] = useState(0)
@@ -25,7 +26,7 @@ const Carousel = () => {
       setIndex((prevIndex) =>
         prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       )
-    }, 3000) // 4 seconds
+    }, 3000) // 3 seconds
 
     return () => clearInterval(interval)
   }, [])
@@ -36,11 +37,30 @@ const Carousel = () => {
 
   return (
     <>
-      <div className='max-w-[1400px] h-[580px] w-full m-auto relative group'>
-        <div
+      <div>
+        <header>
+          Quick and Reliable Repairs for Your{' '}
+          <span>
+            <ReactTyped
+              strings={[
+                'Apple Devices !',
+                'iPhones !',
+                'Macbooks !',
+                'iPads !',
+              ]}
+              typeSpeed={100}
+              backSpeend={80}
+              loop
+            />
+          </span>
+        </header>
+      </div>
+
+      <div className='w-[350px] h-[250px] bg-red-500 md:max-w-[1400px] md:h-[580px] md:w-full m-auto relative group'>
+        {/* <div
           className='w-full h-full bg-center bg-cover duration-500'
           style={{ backgroundImage: `url(${slides[index].url})` }}
-        />
+        /> */}
         {/* Dot Navigation */}
         <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2'>
           {slides.map((_, slideIndex) => (

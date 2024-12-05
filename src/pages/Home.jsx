@@ -3,8 +3,7 @@ import Carousel from '../components/Carousel'
 const Home = () => {
   return (
     <>
-      <div className='bg-red-700 m-3'>
-        <h1>home</h1>
+      <div className=' m-3'>
         <Carousel />
       </div>
     </>
