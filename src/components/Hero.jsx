@@ -37,7 +37,7 @@ const Hero = () => {
 
   return (
     <div className='md:flex flex-row m-6'>
-      <div className='flex flex-col justify-center text-center items-center my-10'>
+      <div className='flex flex-col justify-center text-center items-center my-10 mx-5'>
         <header className='font-sans font-light text-2xl text-blue-800 md:text-4xl'>
           Quick and Reliable Repairs for Your <br className='' />
           <span className='font-bold '>
@@ -67,7 +67,7 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className='w-full h-[250px] bg-red-500 md:max-w-[1400px] md:h-[580px] md:w-full m-auto relative group'>
+      <div className='w-full h-[250px] bg-red-500 md:max-w-[1400px] md:h-[350px] md:w-[600px] m-auto relative group'>
         <div
           className='w-full h-full bg-center bg-cover duration-500'
           style={{ backgroundImage: `url(${slides[index].url})` }}
