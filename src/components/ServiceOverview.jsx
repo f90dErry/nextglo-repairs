@@ -25,17 +25,25 @@ const ServiceOverview = () => {
     },
   ]
   return (
-    <div className='m-4 text-gray-600'>
+    <div className='m-4 text-gray-600 md:flex md:flex-row gap-10 md:m-12'>
       {repairs.map((card) => (
-        <section className='my-12 bg-green-600 pb-3 rounded-lg'>
+        <section className='my-12 shadow-lg pb-3 rounded-xl'>
           <h3 className='pt-3 px-3 text-blue-800 font-bold'>{card.title}</h3>
-          <div className='flex items-center md:flex-col bg-red-500 m-auto p-3'>
+          <div className='md:flex items-center md:flex-col  m-auto px-7 py-2'>
             <p>{card.note}</p>
-            <img
-              src={card.image}
-              alt='vector'
-              className='h-[80px] w-[100px] mx-3'
-            />
+            <div className='flex justify-between'>
+              <button
+                className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
+        md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
+              >
+                Book a Session
+              </button>
+              <img
+                src={card.image}
+                alt='vector'
+                className='h-[80px] w-[90px] mx-3'
+              />
+            </div>
           </div>
         </section>
       ))}
