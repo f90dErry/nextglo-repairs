@@ -8,8 +8,7 @@ const ServiceOverview = () => {
     {
       title: 'iPhone Repairs',
       note: `Get your iPhone repaired quickly and reliably by our expert
-          technicians. From screen replacements to battery fixes, we use
-          high-quality parts for lasting results. Trust us to restore your
+          technicians. From screen replacements to battery replacements to motherboard issues, we use high-quality parts for lasting results. Trust us to restore your
           device to perfect condition.`,
       image: iphoneVector,
     },
@@ -27,24 +26,24 @@ const ServiceOverview = () => {
   return (
     <div className='m-4 text-gray-600 md:flex md:flex-row gap-10 md:m-12'>
       {repairs.map((card) => (
-        <section className='my-12 shadow-lg pb-3 rounded-xl'>
-          <h3 className='pt-3 px-3 text-blue-800 font-bold'>{card.title}</h3>
-          <div className='md:flex items-center md:flex-col  m-auto px-7 py-2'>
-            <p>{card.note}</p>
-            <div className='flex justify-between'>
-              <button
-                className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
-        md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
-              >
-                Book a Session
-              </button>
-              <img
-                src={card.image}
-                alt='vector'
-                className='h-[80px] w-[90px] mx-3'
-              />
-            </div>
-          </div>
+        <section className='my-12 py-10 rounded-xl shadow-2xl shadow-black/25 md:h-[500px] w-full md:w-1/3 flex flex-col items-center '>
+          <h3 className=' px-3 text-blue-800 font-bold underline underline-offset-4'>
+            {card.title}
+          </h3>
+          <p className='px-7 py-5 md:mb-8 w-full  md:h-[150px] text-center '>
+            {card.note}
+          </p>
+          <img
+            src={card.image}
+            alt='vector'
+            className='h-[100px]  object-cover '
+          />
+          <button
+            className='mt-8 text-blue-900 font-bold py-3 px-6 rounded-full 
+            md:hover:bg-red-600 md:hover:text-white border-solid md:hover:border-none border-blue-900 border-2 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
+          >
+            Book a Session
+          </button>
         </section>
       ))}
     </div>
