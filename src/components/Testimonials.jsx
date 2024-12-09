@@ -7,9 +7,6 @@ import Staycation from '../assets/images/1yr.jpg'
 import { useState } from 'react'
 
 const Testimonials = () => {
-  const [visibleCards, setVisibleCards] = useState(2)
-  const [isEpanded, setIsExpanded] = useState(false)
-
   const testimonials = [
     {
       name: 'Addo Dee',
@@ -43,6 +40,21 @@ const Testimonials = () => {
     },
   ]
 
+  const [visibleCards, setVisibleCards] = useState(
+    window.innerWidth >= 768 ? testimonials.length : 2
+  )
+  const [isEpanded, setIsExpanded] = useState(window.innerWidth >= 768)
+
+  const handleShowMore = () => {
+    setVisibleCards(testimonials.length)
+    setIsExpanded(true)
+  }
+
+  const handleShowLess = () => {
+    setVisibleCards(2)
+    setIsExpanded(false)
+  }
+
   return (
     <div className='py-16 px-4 bg-gray-50'>
       <div className='max-w-6xl mx-auto'>
@@ -51,7 +63,7 @@ const Testimonials = () => {
         </h2>
 
         <div className='flex flex-col gap-3 md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          {testimonials.map((testimonial) => (
+          {testimonials.slice(0, visibleCards).map((testimonial) => (
             <div
               key={testimonial.name}
               className='bg-white p-6 rounded-lg shadow-md'
@@ -71,6 +83,22 @@ const Testimonials = () => {
               <p className='text-gray-700'> {testimonial.text} </p>
             </div>
           ))}
+        </div>
+
+        <div className='my-6 text-center md:hidden'>
+          {!isEpanded && visibleCards < testimonials.length && (
+            <button onClick={handleShowMore} className='text-blue-500'>
+              show more
+            </button>
+          )}
+          {isEpanded && (
+            <button
+              onClick={handleShowLess}
+              className='text-blue-500 px-4 py-2 '
+            >
+              show less
+            </button>
+          )}
         </div>
       </div>
     </div>
