@@ -1,21 +1,56 @@
 import addo from '../assets/images/addo.jpg'
+import baweezy from '../assets/images/baweezy.jpg'
+import sleepingKen from '../assets/images/sleepingKen.jpg'
+import auntie5g from '../assets/images/auntie5g.jpg'
+import $40m from '../assets/images/$40m.jpg'
+import Staycation from '../assets/images/1yr.jpg'
+import { useState } from 'react'
 
 const Testimonials = () => {
+  const [visibleCards, setVisibleCards] = useState(2)
+  const [isEpanded, setIsExpanded] = useState(false)
+
   const testimonials = [
     {
       name: 'Addo Dee',
       image: addo,
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
     },
+    {
+      name: 'Baweezy',
+      image: baweezy,
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
+    },
+    {
+      name: 'Ken Ofori-Atta',
+      image: sleepingKen,
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
+    },
+    {
+      name: 'Auntie 5G',
+      image: auntie5g,
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
+    },
+    {
+      name: '$40M Theif',
+      image: $40m,
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
+    },
+    {
+      name: '1yr Staycation',
+      image: Staycation,
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
+    },
   ]
+
   return (
     <div className='py-16 px-4 bg-gray-50'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className=' text-2xl md:text-3xl font-bold text-center'>
+        <h2 className=' text-2xl md:text-3xl font-bold text-center mb-4'>
           What Our Client Say
         </h2>
 
-        <div className='md:grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+        <div className='flex flex-col gap-3 md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
