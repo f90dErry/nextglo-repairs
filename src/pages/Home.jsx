@@ -5,7 +5,7 @@ import Testimonials from '../components/Testimonials'
 const Home = () => {
   return (
     <>
-      <div className=' m-3'>
+      <div className='font-sans m-3'>
         <Hero />
         <ServiceOverview />
         <Testimonials />

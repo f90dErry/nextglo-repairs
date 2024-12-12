@@ -56,9 +56,9 @@ const Testimonials = () => {
   }
 
   return (
-    <div className='py-16 px-4 bg-gray-50'>
+    <div className='py-8 px-4 bg-blue-400'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className=' text-2xl md:text-3xl font-bold text-center mb-4'>
+        <h2 className=' text-2xl md:text-3xl text-white font-bold text-center mb-5'>
           What Our Client Say
         </h2>
 
@@ -87,15 +87,12 @@ const Testimonials = () => {
 
         <div className='my-6 text-center md:hidden'>
           {!isEpanded && visibleCards < testimonials.length && (
-            <button onClick={handleShowMore} className='text-blue-500'>
+            <button onClick={handleShowMore} className='text-white'>
               show more
             </button>
           )}
           {isEpanded && (
-            <button
-              onClick={handleShowLess}
-              className='text-blue-500 px-4 py-2 '
-            >
+            <button onClick={handleShowLess} className='text-white px-4 py-2 '>
               show less
             </button>
           )}
