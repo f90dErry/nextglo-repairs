@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,16 @@ const Booking = () => {
     issueDescription,
     date,
   } = formData
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [message, setMessage] = useState({ text: '', type: '' })
+
+  const onchange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.fullName]: e.target.value,
+    }))
+  }
 
   const onSubmit = (e) => {
     e.preventDefault()
