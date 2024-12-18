@@ -2,6 +2,13 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { toast } from 'react-toastify'
 
+const deviceModels = {
+  Phone: ['5', '5s', '6', 'X', '11', '12'],
+  Tablet: ['iPad Pro', 'iPad', 'iPad mini', 'iPad Air', 'iPad mini 4'],
+  Laptop: ['MacBook Pro', 'MacBook Air', 'MacBook', 'Mac Mini'],
+  Desktop: ['iMac', 'Windows'],
+}
+
 const Booking = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -28,9 +35,13 @@ const Booking = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const onChange = (e) => {
+    const { name, value } = e.target
+    console.log(name, value)
+
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value,
+      [name]: value,
+      ...(name === 'deviceType' && { deviceModel: '' }),
     }))
   }
 
@@ -119,19 +130,22 @@ const Booking = () => {
               className=''
             />
           </div>
+
           <div>
             <label className=''> Device Type</label>
             <select
               value={deviceType}
-              onChange={onChange}
               required
               className=''
+              onChange={onChange}
             >
-              <option value=''>Select device type</option>
-              <option value='phone'>Phone</option>
-              <option value='tablet'>Tablet</option>
-              <option value='laptop'>Laptop</option>
-              <option value='desktop'>Desktop</option>
+              <option>Select device type</option>
+              {Object.keys(deviceModels).map((device) => (
+                <option key={device} value={device}>
+                  {device}
+                </option>
+              ))}
+              {/* <option value='Phone'>Phone</option> */}
             </select>
           </div>
 
