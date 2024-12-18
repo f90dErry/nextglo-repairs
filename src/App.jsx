@@ -6,6 +6,7 @@ import Services from './pages/Services'
 import ContactUs from './pages/ContactUs'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         </Routes>
         <Footer />
       </Router>
+
+      <ToastContainer />
     </>
   )
 }

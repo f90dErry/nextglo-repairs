@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { toast } from 'react-toastify'
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -25,25 +26,167 @@ const Booking = () => {
   } = formData
 
   const [isLoading, setIsLoading] = useState(false)
-  const [message, setMessage] = useState({ text: '', type: '' })
 
-  const onchange = (e) => {
+  const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.fullName]: e.target.value,
+      [e.target.name]: e.target.value,
     }))
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
+
+    try {
+      const templateParams = {
+        from_name: fullName,
+        from_email: email,
+        phone: phone,
+        device_type: deviceType,
+        device_model: deviceModel,
+        issue_type: issueType,
+        message: issueDescription,
+        preferred_date: date,
+      }
+
+      await emailjs.send(
+        'service_dzzletb',
+        'template_hc53zjs',
+        templateParams,
+        'Q-E3wmSDPWa1VY3Ox'
+      )
+      toast.success('Booking successfull! We will contact you soon.')
+
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        deviceType: '',
+        deviceModel: '',
+        issueType: '',
+        issueDescription: '',
+        date: '',
+      })
+    } catch (error) {
+      console.error('Error:', error)
+      toast.error('Booking Failed, Please try again')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
-    <div>
-      <header>Book a Service</header>
+    <div className='max-w2xl mx-auto p-4'>
+      <header className='text-3xl font-bold text-center mb-8'>
+        Book a Service
+      </header>
 
       <main>
-        <form onSubmit={onSubmit}></form>
+        <form onSubmit={onSubmit} className='space-y-6'>
+          <div>
+            <label className=''>Full Name</label>
+            <input
+              name='fullName'
+              type='text'
+              value={fullName}
+              onChange={onChange}
+              required
+              className=''
+            />
+          </div>
+
+          <div>
+            <label className=''>Email</label>
+            <input
+              type='email'
+              name='email'
+              value={email}
+              onChange={onChange}
+              required
+              className=''
+            />
+          </div>
+
+          <div>
+            <label className=''>Telephone Number</label>
+            <input
+              type='tel'
+              name='phone'
+              value={phone}
+              onChange={onChange}
+              required
+              className=''
+            />
+          </div>
+          <div>
+            <label className=''> Device Type</label>
+            <select
+              value={deviceType}
+              onChange={onChange}
+              required
+              className=''
+            >
+              <option value=''>Select device type</option>
+              <option value='phone'>Phone</option>
+              <option value='tablet'>Tablet</option>
+              <option value='laptop'>Laptop</option>
+              <option value='desktop'>Desktop</option>
+            </select>
+          </div>
+
+          <div>
+            <label className=''>Issue Type</label>
+            <select
+              name='issueType'
+              value={issueType}
+              onChange={onChange}
+              required
+              className=''
+            >
+              <option value=''>Select issue type</option>
+              <option value='screen'>Screen Repair</option>
+              <option value='battery'>Battery Replacement</option>
+              <option value='software'>Software Issue</option>
+              <option value='hardware'>Hardware Problem</option>
+              <option value='other'>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label className=''>Issue Description</label>
+            <textarea
+              name='issueDescription'
+              value={issueDescription}
+              onChange={onChange}
+              className=''
+            ></textarea>
+          </div>
+
+          <div>
+            <label className=''>Preferred Date</label>
+            <input
+              type='date'
+              name='date'
+              value={date}
+              onChange={onChange}
+              required
+              className=''
+            />
+          </div>
+
+          <button
+            type='submit'
+            disabled={isLoading}
+            className={`w-full py-2 px-4 rounded transition-colors ${
+              isLoading
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-blue-500 hover:bg-blue-600 text-white'
+            }`}
+          >
+            {isLoading ? 'Sending...' : 'Book Service'}
+          </button>
+        </form>
       </main>
     </div>
   )
