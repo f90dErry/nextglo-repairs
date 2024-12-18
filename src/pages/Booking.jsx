@@ -3,10 +3,49 @@ import emailjs from '@emailjs/browser'
 import { toast } from 'react-toastify'
 
 const deviceModels = {
-  Phone: ['5', '5s', '6', 'X', '11', '12'],
-  Tablet: ['iPad Pro', 'iPad', 'iPad mini', 'iPad Air', 'iPad mini 4'],
-  Laptop: ['MacBook Pro', 'MacBook Air', 'MacBook', 'Mac Mini'],
-  Desktop: ['iMac', 'Windows'],
+  iPhone: [
+    '5',
+    '5s',
+    '6',
+    '6+',
+    '6s',
+    '6s+',
+    '7',
+    '7+',
+    '8',
+    '8+',
+    'X',
+    'Xs',
+    'Xr',
+    'Xsmax',
+    '11',
+    '11Pro',
+    '11PM',
+    '12',
+    '12Mini',
+    '12Pro',
+    '12PM',
+    '13',
+    '13Mini',
+    '13Pro',
+    '13PM',
+    '14',
+    '14Plus',
+    '14Pro',
+    '14PM',
+    '15',
+    '15Plus',
+    '15Pro',
+    '15PM',
+    '16',
+    '16Plus',
+    '16Pro',
+    '16PM',
+  ],
+  iPad: ['iPad Pro', 'iPad', 'iPad mini', 'iPad Air', 'iPad mini 4'],
+  MacBook: ['MacBook Pro', 'MacBook Air', 'MacBook'],
+  Laptop: ['Lenovo', 'HP', 'Dell', 'Samsung'],
+  Desktop: ['iMac', 'Windows', 'Mac Mini'],
 }
 
 const Booking = () => {
@@ -134,6 +173,7 @@ const Booking = () => {
           <div>
             <label className=''> Device Type</label>
             <select
+              name='deviceType'
               value={deviceType}
               required
               className=''
@@ -145,7 +185,25 @@ const Booking = () => {
                   {device}
                 </option>
               ))}
-              {/* <option value='Phone'>Phone</option> */}
+            </select>
+          </div>
+
+          <div>
+            <label className=''> Device Model</label>
+            <select
+              name='deviceModel'
+              value={deviceModel}
+              required
+              className=''
+              onChange={onChange}
+            >
+              <option>Select device Model</option>
+              {deviceType &&
+                deviceModels[deviceType].map((model) => (
+                  <option key={model} value={model}>
+                    {model}
+                  </option>
+                ))}
             </select>
           </div>
 
