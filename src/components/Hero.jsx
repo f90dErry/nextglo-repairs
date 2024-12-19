@@ -3,6 +3,7 @@ import iPad from '../assets/images/iPad.jpg'
 import iPhone from '../assets/images/iPhone.jpg'
 import Macbook from '../assets/images/Macbook.jpg'
 import { ReactTyped } from 'react-typed'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   const [index, setIndex] = useState(0)
@@ -59,12 +60,14 @@ const Hero = () => {
           ensuring quality service and quick turnaround.
         </p>
 
-        <button
-          className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
+        <Link to='/booking'>
+          <button
+            className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
         md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
-        >
-          Book a Session
-        </button>
+          >
+            Book a Session
+          </button>
+        </Link>
       </div>
 
       <div className='w-full h-[250px] md:max-w-[1400px] md:h-[350px] md:w-[600px] m-auto relative group'>

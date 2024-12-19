@@ -126,56 +126,67 @@ const Booking = () => {
   }
 
   return (
-    <div className='max-w2xl mx-auto p-4'>
-      <header className='text-3xl font-bold text-center mb-8'>
+    <div className='mx-auto p-4'>
+      <header className='text-3xl font-bold text-center mb-8 text-blue-900'>
         Book a Service
       </header>
 
-      <main>
-        <form onSubmit={onSubmit} className='space-y-5'>
-          <div className='block'>
-            <label className=''>Full Name</label>
+      <p className='text-center mb-8 text-gray-700'>
+        Please fill out the form below to book a service. We will get back to
+        you as soon as possible.
+      </p>
+
+      <main className='md:flex md:mb-10 mb-8 md:justify-center md:w-[50%]'>
+        <form
+          onSubmit={onSubmit}
+          className='gap-5 grid-cols-1 md:gap-x-[70px] grid md:grid-cols-2 items-start font-sans  text-blue-900'
+        >
+          <div className='mx-auto'>
+            <label className='font-semibold'>Full Name</label>
             <input
               name='fullName'
               type='text'
               value={fullName}
               onChange={onChange}
               required
-              className=''
+              placeholder='John Doe'
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-72'
             />
           </div>
 
-          <div>
-            <label className=''>Email</label>
+          <div className='mx-auto'>
+            <label className='mb-2 font-semibold'>Email</label>
             <input
               type='email'
               name='email'
               value={email}
               onChange={onChange}
               required
-              className=''
+              placeholder='example@email.com'
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-72'
             />
           </div>
 
-          <div>
-            <label className=''>Telephone Number</label>
+          <div className='mx-auto'>
+            <label className='mb-2 font-semibold'>Telephone Number</label>
             <input
               type='tel'
               name='phone'
               value={phone}
               onChange={onChange}
               required
-              className=''
+              placeholder='020 560 0915'
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-72'
             />
           </div>
 
-          <div>
-            <label className=''> Device Type</label>
+          <div className='mx-auto'>
+            <label className='mb-2 font-semibold'> Device Type</label>
             <select
               name='deviceType'
               value={deviceType}
               required
-              className=''
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-72'
               onChange={onChange}
             >
               <option>Select device type</option>
@@ -187,13 +198,13 @@ const Booking = () => {
             </select>
           </div>
 
-          <div>
-            <label className=''> Device Model</label>
+          <div className='mx-auto'>
+            <label className='mb-2 font-semibold'> Device Model</label>
             <select
               name='deviceModel'
               value={deviceModel}
               required
-              className=''
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-72'
               onChange={onChange}
             >
               <option>Select device Model</option>
@@ -206,14 +217,14 @@ const Booking = () => {
             </select>
           </div>
 
-          <div>
-            <label className=''>Issue Type</label>
+          <div className='mx-auto'>
+            <label className='mb-2 font-semibold'>Issue Type</label>
             <select
               name='issueType'
               value={issueType}
               onChange={onChange}
               required
-              className=''
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-72'
             >
               <option value=''>Select issue type</option>
               <option value='screen'>Screen Repair</option>
@@ -224,38 +235,38 @@ const Booking = () => {
             </select>
           </div>
 
-          <div>
-            <label className=''>Issue Description</label>
+          <div className='mx-auto'>
+            <label className='mb-2 font-semibold'>Issue Description</label>
             <textarea
               name='issueDescription'
               value={issueDescription}
               onChange={onChange}
-              className=''
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-72 h-[150px]'
             ></textarea>
           </div>
 
-          <div>
-            <label className=''>Preferred Date</label>
+          {/* <div>
+            <label className='mb-2 font-semibold'>Preferred Date</label>
             <input
               type='date'
               name='date'
               value={date}
               onChange={onChange}
               required
-              className=''
+              className='block bg-gray-100 text-gray-900 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-64'
             />
-          </div>
+          </div> */}
 
           <button
             type='submit'
             disabled={isLoading}
-            className={`w-full py-2 px-4 rounded transition-colors ${
+            className={`w-48 py-3 mx-auto md:mt-3 mt-2 rounded-lg transition-colors ${
               isLoading
                 ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-blue-500 hover:bg-blue-600 text-white'
+                : 'bg-blue-700 hover:bg-blue-800 text-xl  md:text-lg font-bold text-white'
             }`}
           >
-            {isLoading ? 'Sending...' : 'Book Service'}
+            {isLoading ? 'Sending...' : 'Submit'}
           </button>
         </form>
       </main>

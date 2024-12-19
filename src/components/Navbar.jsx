@@ -35,6 +35,7 @@ const Navbar = () => {
           <Link
             key={item.link}
             to={item.link}
+            onClick={() => setIsMenuOpen(false)}
             className='text-blue-900 hover:underline-offset-8 hover:underline hover:text-red-500 transition-colors duration-200 font-bold text-lg'
           >
             {item.linkName}

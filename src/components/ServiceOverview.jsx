@@ -2,6 +2,7 @@ import React from 'react'
 import ipadVector from '../assets/images/ipadVector.png'
 import iphoneVector from '../assets/images/iphoneVector.png'
 import laptop from '../assets/images/laptop.png'
+import { Link } from 'react-router-dom'
 
 const ServiceOverview = () => {
   const repairs = [
@@ -41,12 +42,15 @@ const ServiceOverview = () => {
             alt='vector'
             className='h-[100px]  object-cover '
           />
-          <button
-            className='mt-8 text-blue-900 font-bold py-3 px-6 rounded-full 
+
+          <Link to='/booking'>
+            <button
+              className='mt-8 text-blue-900 font-bold py-3 px-6 rounded-full 
             md:hover:bg-red-600 md:hover:text-white border-solid md:hover:border-none border-blue-900 border-2 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
-          >
-            Book a Session
-          </button>
+            >
+              Book a Session
+            </button>
+          </Link>
         </section>
       ))}
     </div>
