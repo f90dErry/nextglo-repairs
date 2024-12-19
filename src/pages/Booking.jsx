@@ -75,7 +75,6 @@ const Booking = () => {
 
   const onChange = (e) => {
     const { name, value } = e.target
-    console.log(name, value)
 
     setFormData((prevState) => ({
       ...prevState,
@@ -90,14 +89,14 @@ const Booking = () => {
 
     try {
       const templateParams = {
-        from_name: fullName,
-        from_email: email,
-        phone: phone,
-        device_type: deviceType,
-        device_model: deviceModel,
-        issue_type: issueType,
-        message: issueDescription,
-        preferred_date: date,
+        fullName,
+        email,
+        phone,
+        deviceType,
+        deviceModel,
+        issueType,
+        issueDescription,
+        date,
       }
 
       await emailjs.send(
@@ -133,8 +132,8 @@ const Booking = () => {
       </header>
 
       <main>
-        <form onSubmit={onSubmit} className='space-y-6'>
-          <div>
+        <form onSubmit={onSubmit} className='space-y-5'>
+          <div className='block'>
             <label className=''>Full Name</label>
             <input
               name='fullName'
