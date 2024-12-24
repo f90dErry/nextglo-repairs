@@ -81,7 +81,7 @@ const Hero = () => {
             <button
               key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
-              className={`w-3 h-3 rounded-full shadow-lg ${
+              className={`w-3 h-3 rounded-full ${
                 index === slideIndex ? 'bg-white' : 'bg-white/50'
               }`}
             />

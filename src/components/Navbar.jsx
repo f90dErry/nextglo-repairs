@@ -19,11 +19,13 @@ const Navbar = () => {
   return (
     <nav className='shadow-md flex justify-between items-center p-3 relative px-10 md:pr-20'>
       <div className=''>
-        <img
-          src={redlogo}
-          alt='next-glo-logo'
-          className='h-[70px] w-[150px] object-cover'
-        />
+        <Link>
+          <img
+            src={redlogo}
+            alt='next-glo-logo'
+            className='h-[70px] w-[150px] object-cover'
+          />
+        </Link>
       </div>
 
       <div
