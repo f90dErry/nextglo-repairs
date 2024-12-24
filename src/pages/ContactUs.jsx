@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 const ContactUs = () => {
   const topSection = [
-    { name: 'WhatsApp', icon: FaWhatsapp, tel: '020 560 0915' },
+    { name: 'WhatsApp', icon: FaWhatsapp, tel: '+233 20 560 0915' },
     {
       name: 'Email Us',
       icon: MdOutlineMail,
@@ -68,8 +68,8 @@ const ContactUs = () => {
   }
 
   return (
-    <div className='font-sans '>
-      <header className='text-center py-10 bg-blue-50'>
+    <div className='font-sans bg-blue-50'>
+      <header className='text-center py-10'>
         <h1 className='text-3xl font-bold text-blue-800'>Contact Us</h1>
         <p className='mx-5 my-3 text-gray-500 font-medium'>
           We are available 24/7 to answer your questions. Feel free to reach out
@@ -77,24 +77,26 @@ const ContactUs = () => {
         </p>
       </header>
 
-      <section className=''>
-        <div>
+      <section className=' md:flex md:justify-center md:gap-52 py-10 bg-white mx-auto'>
+        <div className='flex flex-col gap-10 mx-5'>
           {topSection.map((item) => (
             <div>
-              <p>{item.name}</p>
-              <item.icon className='text-blue-800' />
-              <p>{item.tel}</p>
-              <p>{item.email}</p>
+              <p className='text-lg font-bold text-blue-800 flex gap-3 items-center'>
+                <item.icon className='text-blue-800' />
+                {item.name}
+              </p>
+              <p className='font-medium text-gray-500'>{item.tel}</p>
+              <p className='font-medium text-gray-500'>{item.email}</p>
             </div>
           ))}
         </div>
 
-        <form className='my-10' onSubmit={onSubmit}>
-          <div className='flex flex-col gap-4 mx-5'>
+        <form className='mt-16 mb-4 md:my-0 md:w-[600px] ' onSubmit={onSubmit}>
+          <div className='flex flex-col gap-4 mx-5 md:grid md:grid-cols-2 md:gap-3'>
             <input
               type='text'
               placeholder='Name'
-              className='bg-blue-50 border-none rounded-md focus:border-red-800'
+              className='bg-blue-50 border-none rounded-md p-3'
               onChange={onChange}
               name='name'
               value={name}
@@ -102,7 +104,7 @@ const ContactUs = () => {
             <input
               type='email'
               placeholder='Email'
-              className='bg-blue-50 border-none rounded-md'
+              className='bg-blue-50 border-none rounded-md p-3'
               onChange={onChange}
               name='email'
               value={email}
@@ -110,14 +112,14 @@ const ContactUs = () => {
             <input
               type='email'
               placeholder='Subject'
-              className='bg-blue-50 border-none rounded-md'
+              className='bg-blue-50 border-none rounded-md p-3 col-span-2'
               onChange={onChange}
               name='subject'
               value={subject}
             />
             <textarea
               placeholder='Message'
-              className='bg-blue-50 border-none h-52 rounded-md'
+              className='bg-blue-50 border-none h-52 rounded-md mb-4 col-span-2'
               onChange={onChange}
               name='message'
               value={message}
