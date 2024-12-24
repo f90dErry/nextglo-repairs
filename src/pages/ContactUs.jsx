@@ -3,14 +3,24 @@ import { MdOutlineMail } from 'react-icons/md'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { toast } from 'react-toastify'
+import { LiaBusinessTimeSolid } from 'react-icons/lia'
 
 const ContactUs = () => {
   const topSection = [
-    { name: 'WhatsApp', icon: FaWhatsapp, tel: '+233 20 560 0915' },
+    {
+      name: 'WhatsApp',
+      icon: FaWhatsapp,
+      tel: '+233 20 560 0915',
+    },
     {
       name: 'Email Us',
       icon: MdOutlineMail,
       email: 'nextglolab@gmail.com',
+    },
+    {
+      name: 'Opening Hours',
+      icon: LiaBusinessTimeSolid,
+      tel: 'Mon - Sat: 8:00am - 8:00pm',
     },
   ]
 
