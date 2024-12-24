@@ -1,6 +1,8 @@
 import { FaWhatsapp } from 'react-icons/fa'
 import { MdOutlineMail } from 'react-icons/md'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { toast } from 'react-toastify'
 
 const ContactUs = () => {
   const topSection = [
@@ -18,6 +20,52 @@ const ContactUs = () => {
     subject: '',
     message: '',
   })
+
+  const { name, email, subject, message } = formData
+
+  const [isLoading, setIsLoading] = useState(false)
+
+  const onChange = (e) => {
+    const { name, value } = e.target
+
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    setIsLoading(true)
+
+    try {
+      const templateParams = {
+        name,
+        email,
+        subject,
+        message,
+      }
+
+      await emailjs.send(
+        'service_w9ncwyr',
+        'template_co9j8c2',
+        templateParams,
+        'Q-E3wmSDPWa1VY3Ox'
+      )
+      toast.success('Message sent successfully')
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      })
+    } catch (error) {
+      toast.error('Message not sent. Please try again.')
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <div className='font-sans '>
@@ -41,32 +89,49 @@ const ContactUs = () => {
           ))}
         </div>
 
-        <form className='my-10'>
+        <form className='my-10' onSubmit={onSubmit}>
           <div className='flex flex-col gap-4 mx-5'>
             <input
               type='text'
               placeholder='Name'
               className='bg-blue-50 border-none rounded-md focus:border-red-800'
+              onChange={onChange}
+              name='name'
+              value={name}
             />
             <input
               type='email'
               placeholder='Email'
               className='bg-blue-50 border-none rounded-md'
+              onChange={onChange}
+              name='email'
+              value={email}
             />
             <input
-              type='text'
+              type='email'
               placeholder='Subject'
               className='bg-blue-50 border-none rounded-md'
+              onChange={onChange}
+              name='subject'
+              value={subject}
             />
             <textarea
               placeholder='Message'
               className='bg-blue-50 border-none h-52 rounded-md'
+              onChange={onChange}
+              name='message'
+              value={message}
             />
             <button
               type='submit'
-              className='bg-blue-800 text-white p-3 rounded-lg font-bold w-[150px]'
+              disabled={isLoading}
+              className={`text-white p-3 rounded-lg font-bold w-[150px] transition-colors ${
+                isLoading
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'md:bg-blue-800 md:hover:bg-blue-700 bg-blue-800 md:text-lg font-bold text-white'
+              }`}
             >
-              Send Message
+              {isLoading ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </form>
