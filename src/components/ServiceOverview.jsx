@@ -14,7 +14,7 @@ const ServiceOverview = () => {
       image: iphoneVector,
     },
     {
-      title: 'Macbook repairs',
+      title: 'Laptop repairs',
       note: `Fast and professional repair services for all MacBook models, including MacBook Air, MacBook Pro, and MacBook Pro M1/M2. From screen replacements to battery fixes, we ensure high-quality results with quick turnaround times. Get your MacBook back to peak performance in no time!`,
       image: laptop,
     },
