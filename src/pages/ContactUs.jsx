@@ -70,7 +70,7 @@ const ContactUs = () => {
   return (
     <div className='font-sans bg-blue-50'>
       <header className='text-center py-10'>
-        <h1 className='text-3xl font-bold text-blue-800'>Contact Us</h1>
+        <h1 className='text-4xl font-bold text-blue-800'>Contact Us</h1>
         <p className='mx-5 my-3 text-gray-500 font-medium'>
           We are available 24/7 to answer your questions. Feel free to reach out
           to us.
@@ -80,8 +80,8 @@ const ContactUs = () => {
       <section className=' md:flex md:justify-center md:gap-52 py-10 bg-white mx-auto'>
         <div className='flex flex-col gap-10 mx-5'>
           {topSection.map((item) => (
-            <div>
-              <p className='text-lg font-bold text-blue-800 flex gap-3 items-center'>
+            <div key={item.name}>
+              <p className='text-xl font-bold text-blue-800 flex gap-3 items-center'>
                 <item.icon className='text-blue-800' />
                 {item.name}
               </p>
@@ -92,11 +92,11 @@ const ContactUs = () => {
         </div>
 
         <form className='mt-16 mb-4 md:my-0 md:w-[600px] ' onSubmit={onSubmit}>
-          <div className='flex flex-col gap-4 mx-5 md:grid md:grid-cols-2 md:gap-3'>
+          <div className='flex flex-col gap-4 mx-5 md:grid md:grid-cols-2 md:gap-4 md:gap-y-6'>
             <input
               type='text'
               placeholder='Name'
-              className='bg-blue-50 border-none rounded-md p-3'
+              className='bg-blue-50 border-none rounded-md p-3 md:p-5'
               onChange={onChange}
               name='name'
               value={name}
@@ -104,15 +104,15 @@ const ContactUs = () => {
             <input
               type='email'
               placeholder='Email'
-              className='bg-blue-50 border-none rounded-md p-3'
+              className='bg-blue-50 border-none rounded-md p-3 md:p-5'
               onChange={onChange}
               name='email'
               value={email}
             />
             <input
-              type='email'
+              type='text'
               placeholder='Subject'
-              className='bg-blue-50 border-none rounded-md p-3 col-span-2'
+              className='bg-blue-50 border-none rounded-md p-3 md:p-5 col-span-2'
               onChange={onChange}
               name='subject'
               value={subject}
@@ -137,6 +137,28 @@ const ContactUs = () => {
             </button>
           </div>
         </form>
+      </section>
+
+      <section className='flex flex-col md:flex-row items-center md:items-start justify-center md:gap-52 mx-auto '>
+        <div className='my-8'>
+          <h2 className='text-center text-3xl font-bold text-blue-800'>
+            Find Us
+          </h2>
+          <p className='text-center text-gray-500 font-medium my-5 '>
+            We are located at the following address
+            <br />
+            New Road, Madina <br />
+            Accra Ghana
+          </p>
+        </div>
+
+        <iframe
+          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.3340966811993!2d-0.16740412409692773!3d5.664733994316726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9cbf1848b629%3A0x2408dff829db5d2f!2sNEXTGLO!5e0!3m2!1sen!2sgh!4v1735057124666!5m2!1sen!2sgh'
+          className='md:w-[900px] pb-6 md:py-10 md:h-[450px] filter grayscale w-[350px] h-[400px] '
+          allowFullScreen=''
+          loading='lazy'
+          referrerPolicy='no-referrer-when-downgrade'
+        ></iframe>
       </section>
     </div>
   )
