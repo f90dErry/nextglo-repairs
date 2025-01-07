@@ -145,7 +145,7 @@ const Booking = () => {
   }
 
   return (
-    <div className='mx-auto p-4'>
+    <div className='mx-auto p-4 bg-blue-50'>
       <header className='text-3xl font-bold text-center mb-8 text-blue-900'>
         Book a Service
       </header>
