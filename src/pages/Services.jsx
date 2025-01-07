@@ -33,6 +33,32 @@ const Services = () => {
       image: iwatch,
     },
   ]
+  const notes = [
+    {
+      title: 'Screen Repair',
+      note: `A cracked or shattered screen can disrupt the functionality and appearance of your device. Our technicians use premium-quality replacement screens to restore the display’s clarity and touch responsiveness. Repairs are completed with precision, ensuring your device looks and works like new.`,
+    },
+    {
+      title: 'Water Damage',
+      note: `Spilled water or accidental submersion can cause internal damage to your device. Our technicians perform thorough diagnostics, clean corrosion, and repair or replace damaged components to restore your device’s functionality and prevent further issues.`,
+    },
+    {
+      title: 'Battery Replacement',
+      note: `Is your device draining quickly or shutting down unexpectedly? A faulty battery can impact performance and usability. We replace old batteries with high-quality, durable ones, ensuring your device runs efficiently and lasts longer throughout the day.`,
+    },
+    {
+      title: 'Hardware Issue',
+      note: `Faulty buttons, damaged ports, or malfunctioning components can limit your device's capabilities. With advanced tools and expertise, we repair or replace defective hardware to bring your device back to full functionality, ensuring long-lasting performance.`,
+    },
+    {
+      title: 'Software Issue',
+      note: `Experiencing freezing, app crashes, or operating system errors? Software glitches can disrupt your workflow. Our experts diagnose and resolve these issues by reinstalling or updating software, removing bugs, and optimizing performance to restore smooth functionality.`,
+    },
+    {
+      title: 'Other',
+      note: `Not sure what’s wrong with your device? From unusual sounds to unexplained malfunctions, we’re here to help. Our skilled team conducts comprehensive diagnostics to identify and fix any issue, providing a tailored solution to get your device working perfectly again.`,
+    },
+  ]
 
   return (
     <div className='bg-blue-50'>
@@ -47,6 +73,21 @@ const Services = () => {
           className='flex items-center  mx-auto md:mx-auto'
         />
       </header>
+
+      <div>
+        <div className='grid grid-cols-1 gap-4 px-4 mx-6 md:mx-10 md:grid-cols-2 lg:grid-cols-3 my-5 text-center'>
+          {notes.map((note) => (
+            <div key={note.title} className='rounded-lg shadow-lg my-5'>
+              <div className='p-4'>
+                <h2 className='text-lg font-semibold text-blue-800'>
+                  {note.title}
+                </h2>
+                <p className='text-gray-500'>{note.note}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <section>
         <div className='grid grid-cols-1 gap-4 px-4 mx-6 md:mx-10 md:grid-cols-2 lg:grid-cols-4 my-5'>

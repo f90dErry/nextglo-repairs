@@ -250,6 +250,7 @@ const Booking = () => {
               <option value='battery'>Battery Replacement</option>
               <option value='software'>Software Issue</option>
               <option value='hardware'>Hardware Problem</option>
+              <option value='water'>Water Damage</option>
               <option value='other'>Other</option>
             </select>
           </div>
