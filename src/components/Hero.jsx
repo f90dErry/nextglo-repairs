@@ -37,45 +37,57 @@ const Hero = () => {
   }
 
   return (
-    <div className='md:flex flex-row mt-6'>
-      <div className='flex flex-col justify-center text-center items-center my-10 mx-5'>
-        <header className='font-sans font-light text-2xl text-blue-800 md:text-4xl'>
-          Quick and Reliable Repairs for Your <br className='' />
-          <span className='font-bold '>
-            <ReactTyped
-              strings={[
-                'Apple Devices !',
-                'iPhones !',
-                'Macbooks !',
-                'iPads !',
-              ]}
-              typeSpeed={150}
-              backSpeed={80}
-              loop
-            />
-          </span>
-        </header>
-        <p className='mt-7 text-gray-600 text-lg'>
-          We offer fast, reliable repairs for iPhones, iPads, and MacBooks,
-          ensuring quality service and quick turnaround.
-        </p>
-
-        <Link to='/booking'>
-          <button
-            className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
-        md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
+    <div className=''>
+      <div
+        className='relative text-center items-center bg-cover bg-center md:h-svh'
+        style={{
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('src/assets/images/Macbook.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className='md:absolute md:bottom-1/4'>
+          <header
+            className=' font-sans font-bold
+         text-2xl text-white md:text-4xl'
           >
-            Book a Service
-          </button>
-        </Link>
+            Quick and Reliable Repairs for Your <br className='' />
+            <span>
+              <ReactTyped
+                strings={[
+                  'Apple Devices !',
+                  'iPhones !',
+                  'Macbooks !',
+                  'iPads !',
+                ]}
+                typeSpeed={150}
+                backSpeed={80}
+                loop
+              />
+            </span>
+          </header>
+          <p className='mt-7 text-white text-lg'>
+            We offer fast, reliable repairs for iPhones, iPads, and MacBooks,
+            ensuring quality service and quick turnaround.
+          </p>
+
+          <Link to='/booking'>
+            <button
+              className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
+        md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
+            >
+              Book a Service
+            </button>
+          </Link>
+        </div>
       </div>
 
-      <div className='w-full h-[250px] md:max-w-[1400px] md:h-[350px] md:w-[600px] m-auto relative group'>
+      {/* <div className='w-full h-[250px] md:w-screen md:h-screen m-auto relative group'>
         <div
-          className='w-full h-full bg-center bg-cover duration-1000'
+          className='w-full h-full bg-center bg-cover duration-1000 object-cover'
           style={{ backgroundImage: `url(${slides[index].url})` }}
         />
-        {/* Dot Navigation */}
+        {/* Dot Navigation 
         <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2'>
           {slides.map((_, slideIndex) => (
             <button
@@ -87,7 +99,7 @@ const Hero = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
