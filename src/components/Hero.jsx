@@ -39,7 +39,7 @@ const Hero = () => {
   return (
     <div className=''>
       <div
-        className='relative text-center items-center bg-cover bg-center md:h-svh'
+        className='relative text-center items-center bg-cover bg-center md:h-screen'
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('src/assets/images/Macbook.jpg')`,
           backgroundSize: 'cover',
