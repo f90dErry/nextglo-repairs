@@ -129,7 +129,7 @@ const ContactUs = () => {
             />
             <textarea
               placeholder='Message'
-              className='bg-blue-50 border-none h-52 rounded-md mb-4 col-span-2'
+              className='bg-blue-50 border-none h-52 rounded-md mb-4 col-span-2 p-3 md:p-5'
               onChange={onChange}
               name='message'
               value={message}

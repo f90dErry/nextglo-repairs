@@ -37,7 +37,7 @@ const Hero = () => {
   }
 
   return (
-    <div className='md:flex flex-row m-6'>
+    <div className='md:flex flex-row mt-6'>
       <div className='flex flex-col justify-center text-center items-center my-10 mx-5'>
         <header className='font-sans font-light text-2xl text-blue-800 md:text-4xl'>
           Quick and Reliable Repairs for Your <br className='' />
@@ -50,7 +50,7 @@ const Hero = () => {
                 'iPads !',
               ]}
               typeSpeed={150}
-              backSpeend={80}
+              backSpeed={80}
               loop
             />
           </span>
@@ -65,14 +65,14 @@ const Hero = () => {
             className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
         md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
           >
-            Book a Session
+            Book a Service
           </button>
         </Link>
       </div>
 
       <div className='w-full h-[250px] md:max-w-[1400px] md:h-[350px] md:w-[600px] m-auto relative group'>
         <div
-          className='w-full h-full bg-center bg-cover duration-500'
+          className='w-full h-full bg-center bg-cover duration-1000'
           style={{ backgroundImage: `url(${slides[index].url})` }}
         />
         {/* Dot Navigation */}
