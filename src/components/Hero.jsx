@@ -1,43 +1,10 @@
-import { useEffect, useState } from 'react'
-import iPad from '../assets/images/iPad.jpg'
-import iPhone from '../assets/images/iPhone.jpg'
 import Macbook from '../assets/images/Macbook.jpg'
 import { ReactTyped } from 'react-typed'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
-  const [index, setIndex] = useState(0)
-  const slides = [
-    {
-      url: iPad,
-      title: 'iPad Repairs',
-    },
-    {
-      url: iPhone,
-      title: 'iPhone Repairs',
-    },
-    {
-      url: Macbook,
-      title: 'Macbook Repairs',
-    },
-  ]
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      )
-    }, 3000) // 3 seconds
-
-    return () => clearInterval(interval)
-  }, [])
-
-  const goToSlide = (index) => {
-    setIndex(index)
-  }
-
   return (
-    <div className=''>
+    <div className='bg-black h-[600px] md:h-screen'>
       <div
         className='relative group text-center items-center bg-cover bg-center md:h-screen duration-1000'
         style={{
@@ -46,12 +13,12 @@ const Hero = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className='md:absolute md:bottom-1/4 md:left-1/2 md:transform md:-translate-x-1/2 md:text-center'>
+        <div className=' md:absolute md:bottom-1/4 md:left-1/2 md:transform md:-translate-x-1/2 md:text-center py-10 px-5 md:p-0'>
           <header
-            className=' font-sans font-bold
+            className='font-sans font-bold
          text-2xl text-white md:text-7xl'
           >
-            Quick and Reliable Repairs for Your <br className='' />
+            Quick and Reliable Repairs for Your <br />
             <span>
               <ReactTyped
                 strings={[
@@ -81,25 +48,6 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-
-      {/* <div className='w-full h-[250px] md:w-screen md:h-screen m-auto relative group'>
-        <div
-          className='w-full h-full bg-center bg-cover duration-1000 object-cover'
-          style={{ backgroundImage: `url(${slides[index].url})` }}
-        />
-        {/* Dot Navigation 
-        <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2'>
-          {slides.map((_, slideIndex) => (
-            <button
-              key={slideIndex}
-              onClick={() => goToSlide(slideIndex)}
-              className={`w-3 h-3 rounded-full ${
-                index === slideIndex ? 'bg-white' : 'bg-white/50'
-              }`}
-            />
-          ))}
-        </div>
-      </div> */}
     </div>
   )
 }

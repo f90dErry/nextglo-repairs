@@ -28,7 +28,7 @@ const ServiceOverview = () => {
     <div className='m-4 text-gray-600 md:flex md:flex-row gap-10 md:m-12'>
       {repairs.map((card) => (
         <section
-          className='my-12 py-10 rounded-xl shadow-lg md:h-[500px] w-full md:w-1/3 flex flex-col items-center'
+          className='py-10 rounded-xl shadow-lg md:h-[500px] w-full md:w-1/3 flex flex-col items-center'
           key={card.title}
         >
           <h3 className=' px-3 text-blue-800 font-bold underline underline-offset-4'>
