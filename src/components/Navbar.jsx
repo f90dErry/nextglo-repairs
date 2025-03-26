@@ -17,7 +17,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className='shadow-md flex sticky top-0 bg-white justify-between items-center p-3 px-10 md:pr-20 z-50'>
+    <nav className='shadow-md flex sticky top-0 bg-white justify-between items-center py-3 px-10 md:px-20 z-50'>
       <div className=''>
         <Link to={'/'}>
           <img
@@ -31,7 +31,7 @@ const Navbar = () => {
       <div
         className={`${
           isMenuOpen ? 'flex' : 'hidden'
-        } absolute flex-col gap-6 top-24 w-[270px] h-[300px] p-3 items-center md:static md:flex md:flex-row  md:w-auto shadow-lg right-1 md:shadow-none md:h-0 md:gap-8 bg-white `}
+        } absolute flex-col gap-6 top-20 w-[270px] h-[300px] p-3 items-center md:static md:flex md:flex-row  md:w-auto shadow-lg right-1 md:shadow-none md:h-0 md:gap-8 bg-white `}
       >
         {navElements.map((item) => (
           <Link
