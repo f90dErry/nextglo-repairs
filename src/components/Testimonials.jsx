@@ -56,7 +56,7 @@ const Testimonials = () => {
   }
 
   return (
-    <div className='py-8 px-4 bg-blue-400'>
+    <div className='py-8 md:py-12 px-4 bg-blue-400'>
       <div className='max-w-6xl mx-auto'>
         <h2 className=' text-2xl md:text-3xl text-white font-bold text-center mb-5'>
           What Our Client Say
@@ -74,9 +74,6 @@ const Testimonials = () => {
                   alt={testimonial.name}
                   className='w-12 h-12 rounded-full mr-4 object-cover'
                 />
-              </div>
-
-              <div>
                 <h3 className='font-semibold'>{testimonial.name}</h3>
               </div>
 

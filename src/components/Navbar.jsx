@@ -17,7 +17,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className='shadow-md flex justify-between items-center p-3 relative px-10 md:pr-20'>
+    <nav className='shadow-md flex sticky top-0 bg-white justify-between items-center p-3 px-10 md:pr-20 z-0'>
       <div className=''>
         <Link to={'/'}>
           <img
