@@ -33,8 +33,8 @@ const Hero = () => {
 
         <Link to='/booking'>
           <button
-            className='mt-8 bg-blue-900 text-white font-bold py-3 px-6 rounded-full 
-        md:hover:bg-red-600 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
+            className='mt-8 bg-red-600 text-white font-bold py-3 px-6 rounded-full 
+        md:hover:bg-red-700 md:hover:scale-125 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
           >
             Book a Service
           </button>
