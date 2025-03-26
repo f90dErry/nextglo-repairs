@@ -41,24 +41,11 @@ const Hero = () => {
       <div
         className='relative group text-center items-center bg-cover bg-center md:h-screen duration-1000'
         style={{
-          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('src/assets/images/Macbook.jpg')`,
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${Macbook})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        {/* Dot navigation */}
-        <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2'>
-          {slides.map((_, slideIndex) => (
-            <button
-              key={slideIndex}
-              onClick={() => goToSlide(slideIndex)}
-              className={`w-3 h-3 rounded-full ${
-                index === slideIndex ? 'bg-white' : 'bg-white/50'
-              }`}
-            />
-          ))}
-        </div>
-
         <div className='md:absolute md:bottom-1/4 md:left-1/2 md:transform md:-translate-x-1/2 md:text-center'>
           <header
             className=' font-sans font-bold
