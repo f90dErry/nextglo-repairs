@@ -1,60 +1,6 @@
-import addo from '../assets/images/addo.jpg'
-import baweezy from '../assets/images/baweezy.jpg'
-import sleepingKen from '../assets/images/sleepingKen.jpg'
-import auntie5g from '../assets/images/auntie5g.jpg'
-import $40m from '../assets/images/$40m.jpg'
-import Staycation from '../assets/images/1yr.jpg'
-import { useState } from 'react'
+import { testimonials } from '../data'
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: 'Addo Dee',
-      image: addo,
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
-    },
-    {
-      name: 'Baweezy',
-      image: baweezy,
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
-    },
-    {
-      name: 'Ken Ofori-Atta',
-      image: sleepingKen,
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
-    },
-    {
-      name: 'Auntie 5G',
-      image: auntie5g,
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
-    },
-    {
-      name: '$40M Theif',
-      image: $40m,
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
-    },
-    {
-      name: '1yr Staycation',
-      image: Staycation,
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi inventore architecto velit suscipit!',
-    },
-  ]
-
-  const [visibleCards, setVisibleCards] = useState(
-    window.innerWidth >= 768 ? testimonials.length : 2
-  )
-  const [isEpanded, setIsExpanded] = useState(window.innerWidth >= 768)
-
-  const handleShowMore = () => {
-    setVisibleCards(testimonials.length)
-    setIsExpanded(true)
-  }
-
-  const handleShowLess = () => {
-    setVisibleCards(2)
-    setIsExpanded(false)
-  }
-
   return (
     <div className='py-8 md:py-12 px-4 bg-blue-400'>
       <div className='max-w-6xl mx-auto'>
@@ -63,7 +9,7 @@ const Testimonials = () => {
         </h2>
 
         <div className='flex flex-col gap-3 md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          {testimonials.slice(0, visibleCards).map((testimonial) => (
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
               className='bg-white p-6 rounded-lg shadow-md'
@@ -80,19 +26,6 @@ const Testimonials = () => {
               <p className='text-gray-700'> {testimonial.text} </p>
             </div>
           ))}
-        </div>
-
-        <div className='my-6 text-center md:hidden'>
-          {!isEpanded && visibleCards < testimonials.length && (
-            <button onClick={handleShowMore} className='text-white'>
-              show more
-            </button>
-          )}
-          {isEpanded && (
-            <button onClick={handleShowLess} className='text-white px-4 py-2 '>
-              show less
-            </button>
-          )}
         </div>
       </div>
     </div>
