@@ -25,34 +25,57 @@ const ServiceOverview = () => {
     },
   ]
   return (
-    <div className='m-4 text-gray-600 md:flex md:flex-row gap-10 md:m-12'>
-      {repairs.map((card) => (
-        <section
-          className='py-10 rounded-xl shadow-lg md:h-[500px] w-full md:w-1/3 flex flex-col items-center'
-          key={card.title}
-        >
-          <h3 className=' px-3 text-blue-800 font-bold underline underline-offset-4'>
-            {card.title}
-          </h3>
-          <p className='px-7 py-5 md:mb-8 w-full  md:h-[150px] text-center '>
-            {card.note}
-          </p>
-          <img
-            src={card.image}
-            alt='vector'
-            className='h-[100px]  object-cover '
-          />
+    // <div className='m-4 text-gray-600 md:flex md:flex-row gap-10 md:m-12'>
+    //   {repairs.map((card) => (
+    //     <section
+    //       className='py-10 rounded-xl shadow-lg md:h-[500px] w-full md:w-1/3 flex flex-col items-center'
+    //       key={card.title}
+    //     >
+    //       <h3 className=' px-3 text-blue-800 font-bold underline underline-offset-4'>
+    //         {card.title}
+    //       </h3>
+    //       <p className='px-7 py-5 md:mb-8 w-full  md:h-[150px] text-center '>
+    //         {card.note}
+    //       </p>
+    //       <img
+    //         src={card.image}
+    //         alt='vector'
+    //         className='h-[100px]  object-cover '
+    //       />
 
-          <Link to='/booking'>
-            <button
-              className='mt-8 text-blue-900 font-bold py-3 px-6 rounded-full 
-            md:hover:bg-red-600 md:hover:text-white border-solid md:hover:border-none border-blue-900 border-2 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
-            >
-              Book a Session
-            </button>
-          </Link>
-        </section>
-      ))}
+    //       <Link to='/booking'>
+    //         <button
+    //           className='mt-8 text-blue-900 font-bold py-3 px-6 rounded-full
+    //         md:hover:bg-red-600 md:hover:text-white border-solid md:hover:border-none border-blue-900 border-2 md:hover:scale-105 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
+    //         >
+    //           Book a Session
+    //         </button>
+    //       </Link>
+    //     </section>
+    //   ))}
+    // </div>
+
+    <div className=' text-gray-600 md:my-16 md:mx-20 flex justify-center'>
+      <section className='md:flex md:flex-col md:w-2/3 '>
+        <h2 className='text-blue-800 md:text-3xl mt-7 font-bold underline underline-offset-4'>
+          iPhone Repairs
+        </h2>
+
+        <div className='md:flex md:items-center md:text-xl md:justify-between'>
+          <p className='md:w-3/5'>
+            Get your iPhone repaired quickly and reliably by our expert
+            technicians. From screen replacements to battery replacements to
+            motherboard issues, we use high-quality parts for lasting results.
+            Trust us to restore your device to perfect condition. <br /> <br />{' '}
+            Our team ensures that your device functions optimally with minimal
+            downtime. Whether it's a faulty charging port or a water-damaged
+            iPhone, we've got you covered. We also offer free diagnostics to
+            pinpoint the exact issue before repairs begin. Experience top-notch
+            service with a fast turnaround time at an affordable cost.
+          </p>
+          <img src={iphoneVector} alt='iPhone' className='h-[40vh]' />
+        </div>
+      </section>
     </div>
   )
 }
