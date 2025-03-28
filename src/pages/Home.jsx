@@ -1,6 +1,7 @@
 import Hero from '../components/Hero'
 import ServiceOverview from '../components/ServiceOverview'
 import Testimonials from '../components/Testimonials'
+import Slider from '../components/Slider'
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
       <div className='font-sans '>
         <Hero />
         <ServiceOverview />
-        <Testimonials />
+        <Slider />
       </div>
     </>
   )

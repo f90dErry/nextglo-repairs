@@ -3,7 +3,8 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'flowbite-react'
 import Testimonials from './Testimonials'
-import { testimonials } from '../data'
+import { clients } from '../data'
+import '../slider.css'
 
 const Slider = () => {
   return (
@@ -17,10 +18,10 @@ const Slider = () => {
           1024: { slidesPerView: 3 },
         }}
       >
-        {testimonials.map((testimonial, index) => (
+        {clients.map((item, index) => (
           <SwiperSlide key={index}>
             <div className='flex justify-center'>
-              <Testimonials item={testimonial} />
+              <Testimonials item={item} />
             </div>
           </SwiperSlide>
         ))}

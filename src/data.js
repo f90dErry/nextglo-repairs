@@ -5,7 +5,7 @@ import auntie5g from './assets/images/auntie5g.jpg'
 import $40m from './assets/images/$40m.jpg'
 import Staycation from './assets/images/1yr.jpg'
 
-export const testimonials = [
+export const clients = [
   {
     name: 'Addo Dee',
     image: addo,
