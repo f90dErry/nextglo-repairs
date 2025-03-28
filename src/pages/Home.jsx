@@ -13,8 +13,8 @@ const Home = () => {
           <h2 className=' text-2xl md:text-3xl text-white font-bold text-center mb-5'>
             What Our Client Say
           </h2>
+          <Slider />
         </div>
-        {/* <Slider /> */}
       </div>
     </>
   )

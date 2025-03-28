@@ -12,17 +12,17 @@ const Slider = () => {
       <Swiper
         pagination={{ clickable: true, el: '.custom-pagination' }}
         modules={[Pagination, Navigation]}
+        slidesPerView={1}
+        spaceBetween={0}
         breakpoints={{
           0: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          768: { slidesPerView: 2, spaceBetween: 2 },
+          1024: { slidesPerView: 3, spaceBetween: 5 },
         }}
       >
         {clients.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className='flex justify-center'>
-              <Testimonials item={item} />
-            </div>
+          <SwiperSlide key={index} className='flex justify-center'>
+            <Testimonials item={item} />
           </SwiperSlide>
         ))}
 

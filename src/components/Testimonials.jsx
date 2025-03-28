@@ -1,25 +1,20 @@
 const Testimonials = ({ item }) => {
   return (
-    <div className='py-8 md:py-12 px-4 bg-blue-400'>
-      <div className='max-w-6xl mx-auto'>
-        <h2 className=' text-2xl md:text-3xl text-white font-bold text-center mb-5'>
-          What Our Client Say
-        </h2>
-
-        <div className='flex flex-col gap-3 md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          <div key={item.name} className='bg-white p-6 rounded-lg shadow-md'>
-            <div className='flex items-center mb'>
-              <img
-                src={item.image}
-                alt={item.name}
-                className='w-12 h-12 rounded-full mr-4 object-cover'
-              />
-              <h3 className='font-semibold'>{item.name}</h3>
-            </div>
-
-            <p className='text-gray-700'> {item.text} </p>
-          </div>
+    <div className='w-full md:w-2/3 lg:w-2/3'>
+      <div
+        key={item.name}
+        className='bg-white p-6 h-[30vh] md:h-[20vh] rounded-lg shadow-md'
+      >
+        <div className='flex items-center'>
+          <img
+            src={item.image}
+            alt={item.name}
+            className='w-12 h-12 rounded-full mr-4 object-cover'
+          />
+          <h3 className='font-semibold'>{item.name}</h3>
         </div>
+
+        <p className='text-gray-700 mt-5 '> {item.text} </p>
       </div>
     </div>
   )
