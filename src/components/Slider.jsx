@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Pagination } from 'flowbite-react'
+import { Pagination, Navigation } from 'swiper/modules'
 import Testimonials from './Testimonials'
 import { clients } from '../data'
 import '../slider.css'

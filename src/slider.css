@@ -9,12 +9,12 @@
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: #618a8a; /* Customize color */
+  background-color: #76a9fa; /* Customize color */
   opacity: 1;
   transition: 0.3s;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ff4500; /* Active dot color */
+  background-color: #233876; /* Active dot color */
   transform: scale(1.2);
 }

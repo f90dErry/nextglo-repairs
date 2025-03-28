@@ -10,14 +10,14 @@ const Testimonials = ({ item }) => {
           <div key={item.name} className='bg-white p-6 rounded-lg shadow-md'>
             <div className='flex items-center mb'>
               <img
-                src={item}
-                alt={item}
+                src={item.image}
+                alt={item.name}
                 className='w-12 h-12 rounded-full mr-4 object-cover'
               />
-              <h3 className='font-semibold'>{item}</h3>
+              <h3 className='font-semibold'>{item.name}</h3>
             </div>
 
-            <p className='text-gray-700'> {item} </p>
+            <p className='text-gray-700'> {item.text} </p>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import Macbook from '../assets/images/Macbook.jpg'
 import { ReactTyped } from 'react-typed'
 import { Link } from 'react-router-dom'
 
