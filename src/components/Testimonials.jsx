@@ -3,7 +3,7 @@ const Testimonials = ({ item }) => {
     <div className='w-full md:w-2/3 lg:w-2/3'>
       <div
         key={item.name}
-        className='bg-white p-6 h-[30vh] md:h-[20vh] rounded-lg shadow-md'
+        className='bg-white p-6 h-[30vh] md:h-[25vh] rounded-lg shadow-md'
       >
         <div className='flex items-center'>
           <img
