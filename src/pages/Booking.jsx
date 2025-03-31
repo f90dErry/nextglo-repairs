@@ -155,7 +155,7 @@ const Booking = () => {
         you as soon as possible.
       </p>
 
-      <main className='md:flex md:mb-10 mb-8 md:justify-center md:w-[50%]'>
+      <main className='md:flex md:mb-10 mb-8 md:justify-center md:w-[50%] md:items-center'>
         <form
           onSubmit={onSubmit}
           className='gap-5 grid-cols-1 md:gap-x-[70px] grid md:grid-cols-2 items-start font-sans  text-blue-900'
