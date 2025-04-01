@@ -3,18 +3,11 @@ import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5'
 import { useState } from 'react'
+import { navElements } from '../data'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toogleMenu = () => setIsMenuOpen(!isMenuOpen)
-
-  const navElements = [
-    { link: '/', linkName: 'Home' },
-    { link: '/about-us', linkName: 'About Us' },
-    { link: '/services', linkName: 'Services' },
-    { link: '/booking', linkName: 'Booking' },
-    { link: '/contact-us', linkName: 'Contact Us' },
-  ]
 
   return (
     <nav className='shadow-md flex sticky top-0 bg-white justify-between items-center py-3 px-10 md:px-20 z-50'>

@@ -83,7 +83,7 @@ const ServiceOverview = () => {
 
         <Link to='/booking'>
           <button
-            className='my-8  text-blue-900 font-bold py-3 px-6 rounded-full
+            className='my-8 md:mb-0 text-blue-900 font-bold py-3 px-6 rounded-full
             md:hover:bg-red-700 md:hover:text-white border-solid md:hover:border-none border-blue-900 border-2 md:hover:scale-125 md:transform md:transition-all md:duration-300 md:shadow-lg md:hover:shadow-xl'
           >
             Book a Service

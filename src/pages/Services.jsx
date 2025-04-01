@@ -1,65 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import iPhone16 from '../assets/images/iPhone16.jpg'
-import M4mac from '../assets/images/M4mac.jpg'
-import iPadpro from '../assets/images/iPadpro.jpg'
-import iwatch from '../assets/images/iwatch.jpg'
 import all from '../assets/images/all.png'
+import { services, notes } from '../data'
 
 const Services = () => {
-  const services = [
-    {
-      id: 1,
-      title: 'iPhone Repair',
-      test: '',
-      image: iPhone16,
-    },
-    {
-      id: 2,
-      title: 'Laptop Repair',
-      test: '',
-      image: M4mac,
-    },
-    {
-      id: 3,
-      title: 'iPad Repair',
-      test: '',
-      image: iPadpro,
-    },
-    {
-      id: 4,
-      title: 'Smart Watch Repair',
-      test: '',
-      image: iwatch,
-    },
-  ]
-  const notes = [
-    {
-      title: 'Screen Repair',
-      note: `A cracked or shattered screen can disrupt the functionality and appearance of your device. Our technicians use premium-quality replacement screens to restore the display’s clarity and touch responsiveness. Repairs are completed with precision, ensuring your device looks and works like new.`,
-    },
-    {
-      title: 'Water Damage',
-      note: `Spilled water or accidental submersion can cause internal damage to your device. Our technicians perform thorough diagnostics, clean corrosion, and repair or replace damaged components to restore your device’s functionality and prevent further issues.`,
-    },
-    {
-      title: 'Battery Replacement',
-      note: `Is your device draining quickly or shutting down unexpectedly? A faulty battery can impact performance and usability. We replace old batteries with high-quality, durable ones, ensuring your device runs efficiently and lasts longer throughout the day.`,
-    },
-    {
-      title: 'Hardware Issue',
-      note: `Faulty buttons, damaged ports, or malfunctioning components can limit your device's capabilities. With advanced tools and expertise, we repair or replace defective hardware to bring your device back to full functionality, ensuring long-lasting performance.`,
-    },
-    {
-      title: 'Software Issue',
-      note: `Experiencing freezing, app crashes, or operating system errors? Software glitches can disrupt your workflow. Our experts diagnose and resolve these issues by reinstalling or updating software, removing bugs, and optimizing performance to restore smooth functionality.`,
-    },
-    {
-      title: 'Other',
-      note: `Not sure what’s wrong with your device? From unusual sounds to unexplained malfunctions, we’re here to help. Our skilled team conducts comprehensive diagnostics to identify and fix any issue, providing a tailored solution to get your device working perfectly again.`,
-    },
-  ]
-
   return (
     <div className='bg-blue-50'>
       <header className='container mx-auto py-10 text-center'>

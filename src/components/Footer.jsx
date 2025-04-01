@@ -1,35 +1,5 @@
 import { Link } from 'react-router-dom'
-import { BsTwitterX } from 'react-icons/bs'
-import { SiWhatsapp } from 'react-icons/si'
-import { FaFacebookF } from 'react-icons/fa6'
-import { FiInstagram } from 'react-icons/fi'
-
-const footerElements = [
-  { link: '/', linkName: 'Home' },
-  { link: '/about-us', linkName: 'About Us' },
-  { link: '/services', linkName: 'Services' },
-  { link: '/booking', linkName: 'Booking' },
-  { link: '/contact-us', linkName: 'Contact Us' },
-]
-
-const socialIcons = [
-  {
-    path: 'https://www.instagram.com/nextglostores/',
-    name: 'Instagram',
-    icon: <FiInstagram />,
-  },
-  { path: 'https://x.com/nextglo', name: 'X (Twitter)', icon: <BsTwitterX /> },
-  {
-    path: 'https://web.facebook.com/nextglo/?_rdc=1&_rdr',
-    name: 'Facebook',
-    icon: <FaFacebookF />,
-  },
-  {
-    path: 'https://www.instagram.com/nextglostores/',
-    name: 'Whatsapp',
-    icon: <SiWhatsapp />,
-  },
-]
+import { footerElements, socialIcons } from '../data'
 
 const Footer = () => {
   const footerYear = new Date().getFullYear()
@@ -59,13 +29,15 @@ const Footer = () => {
           <div className=''>
             <h3 className='text-white mb-6 font-semibold text-xl'>Follow Us</h3>
             <div className='flex flex-col gap-4'>
-              {socialIcons.map((item) => (
+              {socialIcons.map((item, index) => (
                 <Link
-                  key={item.name}
+                  key={index}
                   to={item.path}
                   className='flex items-center gap-3 text-gray-400 md:hover:text-white text-sm'
                 >
-                  <span className='text-lg'>{item.icon}</span>
+                  <span className='text-lg'>
+                    <item.icon />
+                  </span>
                   <span>{item.name}</span>
                 </Link>
               ))}
