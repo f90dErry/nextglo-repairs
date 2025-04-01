@@ -77,7 +77,10 @@ const Services = () => {
       <div>
         <div className='grid grid-cols-1 gap-4 px-4 mx-6 md:mx-10 md:grid-cols-2 lg:grid-cols-3 my-5 text-center'>
           {notes.map((note) => (
-            <div key={note.title} className='rounded-lg shadow-lg my-5'>
+            <div
+              key={note.title}
+              className='rounded-lg shadow-lg my-5 bg-white'
+            >
               <div className='p-4'>
                 <h2 className='text-lg font-semibold text-blue-800'>
                   {note.title}
@@ -99,7 +102,7 @@ const Services = () => {
               <img
                 src={service.image}
                 alt={service.title}
-                className='w-full h-48 rounded-t-lg'
+                className='w-full h-48 object-cover rounded-t-lg'
               />
               <div className='p-4'>
                 <h2 className='text-lg font-medium text-blue-800'>

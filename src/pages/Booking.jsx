@@ -146,7 +146,7 @@ const Booking = () => {
 
   return (
     <div className='mx-auto p-4 bg-blue-50'>
-      <header className='text-3xl font-bold text-center mb-8 text-blue-900'>
+      <header className='text-3xl font-bold text-center my-8 text-blue-900'>
         Book a Service
       </header>
 
@@ -155,10 +155,10 @@ const Booking = () => {
         you as soon as possible.
       </p>
 
-      <main className='md:flex md:mb-10 mb-8 md:justify-center md:w-[50%] md:items-center'>
+      <main className='md:flex md:mb-10 mb-8 md:justify-center md:w-[50%] md:mx-auto'>
         <form
           onSubmit={onSubmit}
-          className='gap-5 grid-cols-1 md:gap-x-[70px] grid md:grid-cols-2 items-start font-sans  text-blue-900'
+          className='gap-5 grid-cols-1 md:gap-x-[70px] grid md:grid-cols-2 items-start font-sans text-blue-900'
         >
           <div className='mx-auto'>
             <label className='font-semibold'>Full Name</label>

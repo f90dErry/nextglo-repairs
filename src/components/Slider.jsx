@@ -12,7 +12,7 @@ const Slider = () => {
       <Swiper
         pagination={{ clickable: true, el: '.custom-pagination' }}
         modules={[Pagination, Navigation]}
-        spaceBetween={0}
+        spaceBetween={5}
         breakpoints={{
           0: { slidesPerView: 1 },
           768: { slidesPerView: 2, spaceBetween: 2 },
