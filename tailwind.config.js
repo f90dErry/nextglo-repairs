@@ -10,7 +10,7 @@ export default {
         custom: '6px 6px 12px -2px rgba(0, 0, 0, 0.39)',
       },
       backgroundImage: {
-        'hero-img': `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('/Macbook.jpg')`,
+        'hero-img': `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('/Macbook.jpg?v=1')`,
       },
     },
   },
