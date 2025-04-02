@@ -22,11 +22,13 @@ export const clients = [
     name: 'Addo Dee',
     image: addo,
     text: 'Fast and reliable service! My iPhone stopped charging, and they fixed it within 30 minutes. Highly recommend!',
+    location: 'Kumasi, Ghana',
   },
   {
     name: 'Baweezy',
     image: baweezy,
     text: 'I was worried about my iPad’s cracked screen, but they replaced it quickly and at a great price. Excellent work!',
+    location: 'Kade, E/R, Ghana',
   },
   {
     name: 'Ken Ofori-Atta',
@@ -37,16 +39,19 @@ export const clients = [
     name: 'Auntie 5G',
     image: auntie5g,
     text: 'They saved my phone! I had water damage, and they managed to restore it completely. Amazing work!',
+    location: 'Accra, Ghana',
   },
   {
     name: '$40M Theif',
     image: $40m,
     text: 'Quick and professional. My iPad battery wasn’t lasting, and they replaced it the same day. Works perfectly now!',
+    location: 'Takoradi, Ghana',
   },
   {
     name: '1yr Staycation',
     image: Staycation,
     text: 'Top-notch service! My laptop was running slow, and they upgraded the SSD, making it super fast. Very happy!',
+    location: 'Ho, Ghana',
   },
 ]
 

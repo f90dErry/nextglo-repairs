@@ -15,6 +15,7 @@ const Testimonials = ({ item }) => {
         </div>
 
         <p className='text-gray-700 mt-5 '> {item.text} </p>
+        <h3 className='font-semibold pt-2'>{item.location}</h3>
       </div>
     </div>
   )
