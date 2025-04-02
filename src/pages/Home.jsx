@@ -1,6 +1,7 @@
 import Hero from '../components/Hero'
 import ServiceOverview from '../components/ServiceOverview'
 import Slider from '../components/Slider'
+import Experience from '../components/Experience'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
           <Slider />
         </div>
       </div>
+      <Experience />
     </>
   )
 }

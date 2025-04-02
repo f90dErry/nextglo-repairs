@@ -15,6 +15,10 @@ import iPhone16 from './assets/images/iPhone16.jpg'
 import M4mac from './assets/images/M4mac.jpg'
 import iPadpro from './assets/images/iPadpro.jpg'
 import iwatch from './assets/images/iwatch.jpg'
+import { VscWorkspaceTrusted } from 'react-icons/vsc'
+import { MdOutlineSettingsAccessibility } from 'react-icons/md'
+import { MdMiscellaneousServices } from 'react-icons/md'
+import { MdOutlineSupportAgent } from 'react-icons/md'
 
 // testimonials section
 export const clients = [
@@ -228,5 +232,29 @@ export const notes = [
   {
     title: 'Other',
     note: `Not sure what’s wrong with your device? From unusual sounds to unexplained malfunctions, we’re here to help. Our skilled team conducts comprehensive diagnostics to identify and fix any issue, providing a tailored solution to get your device working perfectly again.`,
+  },
+]
+
+export const experience = [
+  {
+    title: 'Quality Parts',
+    text: 'We use only high-quality, genuine parts for all repairs. This ensures that your device functions optimally and maintains its value.',
+    icon: VscWorkspaceTrusted,
+  },
+  {
+    title: 'Expert Technicians',
+    text: 'Our team consists of highly skilled technicians with extensive experience in gadget repairs. They are trained to handle a wide range of issues, ensuring your devices are in capable hands.',
+    icon: MdOutlineSettingsAccessibility,
+  },
+
+  {
+    title: 'Fast Turnaround',
+    text: 'We understand the importance of your devices in your daily life. Our efficient repair process ensures quick turnaround times without compromising on quality.',
+    icon: MdMiscellaneousServices,
+  },
+  {
+    title: 'Customer Support',
+    text: 'We prioritize customer satisfaction. Our friendly support team is available to assist you with any questions or concerns throughout the repair process.',
+    icon: MdOutlineSupportAgent,
   },
 ]
