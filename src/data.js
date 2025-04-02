@@ -238,12 +238,12 @@ export const notes = [
 export const experience = [
   {
     title: 'Quality Parts',
-    text: 'We use only high-quality, genuine parts for all repairs. This ensures that your device functions optimally and maintains its value.',
+    text: 'We use only high-quality and genuine parts for all repairs. This ensures that your device functions optimally and maintains its value without any future issues',
     icon: VscWorkspaceTrusted,
   },
   {
     title: 'Expert Technicians',
-    text: 'Our team consists of highly skilled technicians with extensive experience in gadget repairs. They are trained to handle a wide range of issues, ensuring your devices are in capable hands.',
+    text: 'Our team consists of highly skilled technicians with extensive experience in gadget repairs. They are trained to handle many issues, ensuring your devices are in capable hands.',
     icon: MdOutlineSettingsAccessibility,
   },
 

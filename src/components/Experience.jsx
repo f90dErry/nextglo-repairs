@@ -9,11 +9,11 @@ const Experience = () => {
 
       <div className='flex flex-col md:flex-row gap-4'>
         {experience.map((item, index) => (
-          <div key={index} className='md:w-1/4 h-auto'>
-            <div className='flex flex-col items-center justify-center gap-2 px-4 py-6 bg-slate-600'>
+          <div key={index} className='md:w-1/4'>
+            <div className='flex flex-col items-center justify-center gap-2 px-4 py-6'>
               <item.icon className='text-6xl rounded-full p-2 text-blue-800 bg-blue-200' />
               <h4 className='font-semibold'>{item.title}</h4>
-              <p className='text-center'>{item.text}</p>
+              <p className='text-center text-gray-700'>{item.text}</p>
             </div>
           </div>
         ))}
